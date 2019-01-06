@@ -1,7 +1,6 @@
 require('dotenv').config();
 const keystone = require('keystone');
 
-console.log('');
 keystone.init({
   'name': 'Rad CMS',
   // Paths to our application static files
