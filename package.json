@@ -4,7 +4,9 @@
   "description": "Smart cms ",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "export NODE_ENV=development && nodemon index.js",
+    "production-start": "export NODE_ENV=production && webpack && node index.js",
+    "compile": "webpack --config webpack.config.js",
     "test": "test"
   },
   "repository": {
@@ -21,7 +23,18 @@
   },
   "homepage": "https://github.com/fcagalj/rad_cms#readme",
   "dependencies": {
+    "dotenv": "^6.2.0",
     "keystone": "^4.0.0",
-    "underscore": "^1.9.1"
+    "loadash": "^1.0.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.0"
   }
 }
